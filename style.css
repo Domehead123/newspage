@@ -1,0 +1,207 @@
+/* REMOVE LEFT-HAND NAV */
+
+.sidebar__content {
+display: none !important;
+}
+
+.page-body {
+left: 0 !important;
+width: 100% !important;
+}
+
+.flex-container {
+display: flex;
+max-width: 1168px;
+flex-wrap: wrap;
+margin-top: 15px;
+}
+
+.latest-news {
+ width: 100%;
+ display: flex;
+}
+
+.other-news {
+ width: 33%;
+}
+.news-image img {
+ max-width: 100%;
+}
+
+.extra-large {
+min-width: 60%;
+max-width: 60%;
+min-height: 300px;
+overflow: hidden;
+}
+
+
+.large {
+min-width: 40%;
+max-width: 40%;
+min-height: 300px;
+overflow: hidden;
+}
+
+.medium {
+min-width: 30%;
+max-width: 30%;
+}
+
+.small {
+min-width: 20%;
+max-width: 20%;
+}
+
+.column {
+margin: 0 25px 25px 0;
+color: #fff;
+box-sizing: border-box;
+padding: 0;
+display: flex;
+flex-wrap: wrap;
+background-repeat: no-repeat !important;
+background-position: center !important; 
+background-size: cover !important;
+}
+
+.column .box {
+box-sizing: border-box;
+width: 100%;
+}
+
+.column .box:first-child {
+margin-bottom: 25px;
+} 
+
+.column:nth-child(3n+3) {  
+margin: 0 0 25px 0;
+}
+
+.dark-blue {
+background: #00193c;
+}
+
+.light-blue {
+background: #438dcc;
+}
+
+.grey {
+background: #777;
+}
+
+.box img {
+width: 100%;
+}
+
+.recruit-header {
+display: block;
+font-size: 1.2em;
+font-weight: bold;
+margin: 0.5em 0 0.35em 0;
+padding: 0 20px;
+line-height: 140%;
+}
+
+.large .recruit-header {
+margin: 0.3em 0 0 0;
+padding: 10px 20px;
+position: absolute;
+bottom: 0;
+width: 100%;
+}
+
+.large:hover .recruit-header {
+text-decoration: underline;
+}
+
+.large .recruit-header::after {
+ content: "\203A";
+ font-size: 2em;
+ font-weight: bold;
+ line-height: 0;
+ position: relative;
+ top: 5px;
+ margin-left: 10px;
+ display:inline-block;
+text-decoration: none;
+
+}
+
+.dark-blue .recruit-header{
+background: #00193c;
+}
+
+.light-blue .recruit-header{
+background: #438dcc;
+}
+
+.grey .recruit-header {
+background: #777;
+}
+
+.abstract {
+display: block;
+margin: 0 0 1em 0;
+padding: 0 20px
+}
+
+.abstract::after {
+    content: "\203A";
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 0;
+    position: relative;
+    top: 3px;
+    margin-left: 10px;
+  display:inline-block;
+  text-decoration: none;
+}
+
+ .box a {
+color: #fff !important;
+text-decoration: none !important;
+transition: 0.4s all;
+width: 100%;
+height: 100%;
+}
+
+.box:hover a{
+text-decoration: underline !important;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+.medium {
+min-width: 25%;
+max-width: 25%;
+}
+
+.small {
+min-width: 25%;
+max-width: 25%;
+}
+
+}
+
+
+@media only screen and (max-width: 860px) {
+.large {
+min-width: 100%;
+max-width: 100%;
+}
+
+.medium {
+min-width: 100%;
+max-width: 100%;
+}
+
+.small {
+min-width: 100%;
+max-width: 100%;
+}
+
+}
+
+
