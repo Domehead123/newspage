@@ -11,9 +11,11 @@
 }
 
 .page-width {
-    width: 1168px;
+    max-width: 1168px;
     margin: 50px auto;
+    padding: 0 25px;
 }
+
 
 /* GENERAL STYLING AND LINKS */
 
@@ -27,7 +29,7 @@ p {
 
 
 p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 130%;
 }
 
@@ -38,13 +40,18 @@ a {
     transition: 0.4s all;
 }
 
+.centre {
+    margin: 0 auto;
+}
+
+
 .topic:hover a,
 .top-story:hover a,
 .tenants:hover a,
 .latest-news a:hover,
 .connected:hover a,
 .more a:hover,
-.media-text a:hover {
+.media a:hover {
     text-decoration: underline;
 }
 
@@ -69,6 +76,13 @@ a {
 }
 
 
+.split-page .latest-news {
+    padding: 25px 0;
+    display: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0;
+}
+
 .top-row {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -77,6 +91,7 @@ a {
 .middle-row {
     clear: both;
     display: flex;
+    flex-wrap: wrap;
     border-bottom: 1px solid #ddd;
     padding: 25px 0 20px 0;
 }
@@ -88,7 +103,7 @@ a {
 }
 
 .top-story {
-    margin: 0 25px 0 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -98,29 +113,30 @@ a {
     display: table;
 }
 
-.top-story-image {
-    margin: 0 0 20px 0;
+
+.top-large-pic {
+    display: block;
+    margin: 0 0 20px 20px;
     height: 200px;
+    float: right;
 }
 
-.top-story-image img {
-    max-height: 100%;
+.top-small-pic {
+    display: none;
+    float: right;
+    margin: 0 0 20px 20px;
+    height: 100px;
 }
-
-
-
-
 
 .topic {
+    width: 33%;
     padding: 0 20px;
     box-sizing: border-box;
     display: inline-block;
     vertical-align: top;
 }
 
-.right-border {
-    border-right: 1px solid #ddd;
-}
+.right-border {}
 
 .topic p {
     font-size: 16px;
@@ -131,17 +147,30 @@ a {
     font-size: 16px;
 }
 
-.topic:first-child {
+.topic:nth-child(1) {
     padding: 0 20px 0 0;
+    border-right: 1px solid #ddd;
+}
+
+.topic:nth-child(2) {
+    border-right: 1px solid #ddd;
 }
 
 .lower-stories {
     border-right: 1px solid #ddd;
 }
 
-.lower-image img {
+.bottom-large-pic {
     height: 200px;
     margin-right: 20px;
+    float: left;
+}
+
+.bottom-small-pic {
+    display: none;
+    float: right;
+    margin: 0 0 20px 20px;
+    height: 100px;
 }
 
 .tenants-container {
@@ -158,6 +187,10 @@ a {
     padding: 5px;
     text-align: center;
     border-radius: 5px;
+}
+
+.tenants-container .more {
+    float: left;
 }
 
 .more a {
@@ -178,22 +211,6 @@ a {
 
 /* SIDE PANEL */
 
-.latest-news {
-    margin-bottom: 1.5em;
-}
-
-.latest-news ul,
-.media-text ul {
-    padding: 0 0 0 20px;
-    margin-top: 1.5em;
-}
-
-.latest-news ul li {
-    margin: 0 0 1em 0;
-    font-size: 16px;
-    list-style-type: square;
-}
-
 .side-panel {
     display: inline-block;
     vertical-align: top;
@@ -204,18 +221,42 @@ a {
     box-sizing: border-box;
 }
 
+.latest-news {
+    margin-bottom: 1.5em;
+}
+
+.latest-news ul,
+.media ul {
+    padding: 0 0 0 20px;
+    margin-top: 1.5em;
+}
+
+.latest-news ul li,
+.media ul li {
+    margin: 0 0 1em 0;
+    font-size: 16px;
+    list-style-type: square;
+}
+
+.extras {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 
 .connected {
     background: #ccc;
     padding: 10px 10px 10px 15px;
     border-radius: 5px;
     margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .connected img {
     float: right;
     height: 85px;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .connected h2 {
@@ -229,21 +270,172 @@ a {
     margin: 0;
 }
 
+
+.connected::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 .media {
+    width: 100%;
+
+}
+
+.media img {
+    float: left;
+    width: 30%;
+    margin-right: 15px;
+}
+
+.media ul {
+    padding: 0 0 0 20px;
+    margin-top: 1.5em;
+    margin-bottom: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 60%;
+}
+
+.media ul li {
+    margin: 0 0 1em 0;
+    list-style-type: square;
+    font-size: 14px;
+}
+
+.extras {
     display: flex;
 }
 
-.media-image {
-    height: 100px;
-    padding-right: 15px;
+
+@media only screen and (max-width: 1000px) {
+    .split-page {
+        width: 100%;
+    }
+
+    .side-panel {
+        width: 100%;
+        border-left: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .split-page .latest-news {
+        display: block
+    }
+
+    .side-panel .latest-news {
+        display: none;
+    }
+
+    .connected {
+        width: 45%;
+        margin-right: 25px;
+        margin-bottom: 0;
+    }
+
+    .media {
+        width: 45%;
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 5px;
+        box-sizing: content-box;
+    }
+
 }
 
-.media-image img {
-    height: 100%;
+
+@media only screen and (max-width: 750px) {
+    .top-large-pic {
+        display: none;
+    }
+
+    .top-small-pic {
+        display: block;
+    }
+
+    .bottom-large-pic {
+        display: none;
+    }
+
+    .bottom-small-pic {
+        display: block;
+    }
+
+    .tenants-container {
+        margin-right: 0;
+    }
+
+    .tenants-container .more {
+        float: none;
+        margin: 10px auto;
+        clear: both;
+    }
+
 }
 
-.media-text ul li {
-    font-size: 14px;
-    margin: 0 0 1em 0;
-    list-style-type: square;
+
+@media only screen and (max-width: 660px) {
+    .connected {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+
+    .media {
+        width: 100%;
+    }
+
+    .media img {
+        height: 100px;
+        width: auto;
+    }
+
+
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    .topic {
+        width: 100%;
+    }
+
+    .topic:nth-child(1) {
+        padding: 0 0 25px 0;
+        border-right: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .topic:nth-child(2) {
+        padding: 25px 0;
+        border-right: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .topic:nth-child(3) {
+        padding: 25px 0 0 0;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 450px) {
+
+    .top-small-pic,
+    .bottom-small-pic {
+        height: auto;
+        width: 100%;
+    }
+}
+
+
+
+@media only screen and (max-width: 400px) {
+
+    .media img {
+        display: none;
+    }
 }
