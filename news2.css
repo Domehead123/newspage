@@ -57,6 +57,7 @@ a {
 
 .subject-header {
     color: #666;
+    font-size: 1.1em;
 }
 
 .subject-header:before {
@@ -65,6 +66,12 @@ a {
     font-size: 1.5em;
     color: #002e6f;
     margin-right: 5px;
+}
+
+.date {
+    color: #666;
+    font-size: 14.4px;
+    display: block;
 }
 
 /* MAIN CONTENT */
