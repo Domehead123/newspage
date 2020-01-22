@@ -67,6 +67,12 @@ a {
     margin-right: 5px;
 }
 
+.date {
+    color: #666;
+    font-size: 14.4px;
+    display: block;
+}
+
 /* MAIN CONTENT */
 
 .split-page {
@@ -105,6 +111,7 @@ a {
 .top-story {
     margin: 0;
     box-sizing: border-box;
+    position: relative;
 }
 
 .top-story::after {
@@ -113,19 +120,66 @@ a {
     display: table;
 }
 
-
-.top-large-pic {
+.large-image-wrapper {
     display: block;
     margin: 0 0 20px 20px;
     height: 200px;
     float: right;
+    position: relative;
 }
 
-.top-small-pic {
+.small-image-wrapper {
     display: none;
     float: right;
     margin: 0 0 20px 20px;
     height: 100px;
+    position: relative;
+}
+
+.large-image-wrapper img,
+.small-image-wrapper img {
+    height: 100%;
+}
+
+.play {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #e60054;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    float: right;
+    color: #fff;
+    text-align: center;
+}
+
+.large-image-wrapper .play {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.small-image-wrapper .play {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.7em;
+}
+
+.large-video {
+    float: right;
+    width: 560px;
+    height: 315px;
+    margin: 0 0 20px 15px;
+}
+
+.small-video {
+    display: none;
+    width: 300px;
+    height: 169px;
+    float: right;
+    margin: 0 0 20px 15px;
 }
 
 .topic {
@@ -136,7 +190,6 @@ a {
     vertical-align: top;
 }
 
-.right-border {}
 
 .topic p {
     font-size: 16px;
@@ -307,8 +360,16 @@ a {
     display: flex;
 }
 
+@media only screen and (max-width: 1150px) {
+    .large-video {
+        display: none;
+    }
 
+    .small-video {
+        display: block;
+    }
 
+}
 
 
 @media only screen and (max-width: 1000px) {
@@ -349,11 +410,11 @@ a {
 
 
 @media only screen and (max-width: 750px) {
-    .top-large-pic {
+    .large-image-wrapper {
         display: none;
     }
 
-    .top-small-pic {
+    .small-image-wrapper {
         display: block;
     }
 
@@ -420,9 +481,16 @@ a {
         padding: 25px 0 0 0;
     }
 
-
 }
 
+@media only screen and (max-width: 500px) {
+
+    .small-video {
+        width: 100%;
+        min-height: 210px;
+    }
+
+}
 
 
 @media only screen and (max-width: 450px) {
@@ -432,6 +500,12 @@ a {
         height: auto;
         width: 100%;
     }
+
+    .small-video {
+        width: 100%;
+        min-height: 230px;
+    }
+
 }
 
 
@@ -441,4 +515,6 @@ a {
     .media img {
         display: none;
     }
+
+
 }
