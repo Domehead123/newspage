@@ -29,6 +29,31 @@ h3 {
     transition: 0.4s all;
 }
 
+/* Subject headers and date */
+
+.subject-header {
+    color: #666;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+}
+
+.subject-header:before {
+    content: "\25A0";
+    line-height: 0;
+    font-size: 1.5em;
+    color: #002e6f;
+    margin-right: 5px;
+}
+
+.date {
+    color: #666;
+    font-size: 14.4px;
+    display: block;
+}
+
+
+/* Top story and video icon */
+
 .top-story {
     border-bottom: 1px solid #ddd;
 }
@@ -36,6 +61,34 @@ h3 {
 .top-story p {
     font-size: 18px;
     line-height: 130%;
+}
+
+.large-image-wrapper {
+    position: relative;
+    float: right;
+    display: none;
+    margin-bottom: 20px;
+}
+
+.small-image-wrapper {
+    position: relative;
+    float: right;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.top-large-pic {
+    margin: 0 0 0 20px;
+    height: 200px;
+    float: right;
+}
+
+.top-small-pic {
+    display: block;
+    float: right;
+    margin: 0 0 0 20px;
+    height: 100px;
+    position: relative;
 }
 
 .play {
@@ -62,8 +115,14 @@ h3 {
     font-size: 0.7em;
 }
 
-.topic:first-of-type {
+/* Middle row */
 
+.middle-row {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0 0;
+}
+
+.topic:first-of-type {
     border-bottom: 1px solid #ddd;
     padding: 0;
 }
@@ -84,51 +143,11 @@ h3 {
     line-height: 130%;
 }
 
-.subject-header {
-    color: #666;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 16px;
-}
+/* Bottom row */
 
-.subject-header:before {
-    content: "\25A0";
-    line-height: 0;
-    font-size: 1.5em;
-    color: #002e6f;
-    margin-right: 5px;
-}
-
-.large-image-wrapper {
-    position: relative;
-    float: right;
-    display: none;
-    margin-bottom: 20px;
-}
-
-.small-image-wrapper {
-    position: relative;
-    float: right;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.top-large-pic {
-    margin: 0 0 0 20px;
-    height: 200px;
-    float: right;
-}
-
-.middle-row {
+.bottom-story {
+    padding: 20px 0 0 0;
     border-bottom: 1px solid #ddd;
-    padding: 20px 0 0;
-}
-
-.top-small-pic {
-    display: block;
-    float: right;
-    margin: 0 0 0 20px;
-    height: 100px;
-    position: relative;
 }
 
 .bottom-large-pic {
@@ -144,16 +163,38 @@ h3 {
     height: 100px;
 }
 
-.date {
-    color: #666;
-    font-size: 14.4px;
+.more {
     display: block;
+    margin: 10px 0 15px 0;
+    font-size: 0.9em;
+    background: rgb(82, 122, 161);
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    float: left;
 }
 
-.bottom-story {
-    padding: 20px 0 0 0;
-    border-bottom: 1px solid #ddd;
+.more:hover {
+    background: #397070;
 }
+
+.more a {
+    color: #fff;
+}
+
+.more::after {
+    content: "\203A";
+    color: #fff;
+    font-size: 1.5em;
+    line-height: 0;
+    margin-left: 5px;
+    position: relative;
+    top: 1px;
+}
+
+
+/* Side panel */
 
 .side-panel {
     padding: 20px 0 0 0;
@@ -206,37 +247,7 @@ h3 {
     display: table;
 }
 
-.more {
-    display: block;
-    margin: 10px 0 15px 0;
-    font-size: 0.9em;
-    background: rgb(82, 122, 161);
-    width: 200px;
-    padding: 5px;
-    text-align: center;
-    border-radius: 5px;
-    float: left;
-}
-
-.more:hover {
-    background: #397070;
-}
-
-.more a {
-    color: #fff;
-}
-
-.more::after {
-    content: "\203A";
-    color: #fff;
-    font-size: 1.5em;
-    line-height: 0;
-    margin-left: 5px;
-    position: relative;
-    top: 1px;
-}
-
-
+/* Media rules */
 
 @media (min-width: 800px) {
 
@@ -255,14 +266,6 @@ h3 {
 
     .news-main {
         padding-right: 35px;
-    }
-
-    .bottom-large-pic {
-        display: block;
-    }
-
-    .bottom-small-pic {
-        display: none;
     }
 
     .middle-row {
@@ -290,21 +293,24 @@ h3 {
         border-bottom: none;
     }
 
+    .bottom-large-pic {
+        display: block;
+    }
+
+    .bottom-small-pic {
+        display: none;
+    }
+
     .side-panel {
         border-left: 1px solid #ddd;
         padding: 0 0 0 15px;
     }
-
-
 
     .connected img {
         width: 100%;
         height: auto;
         margin: 0;
     }
-
-
-
 }
 
 @media (min-width: 1000px) {
