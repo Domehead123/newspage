@@ -57,6 +57,7 @@ a {
 
 .subject-header {
     color: #666;
+
 }
 
 .subject-header:before {
@@ -92,6 +93,7 @@ a {
 .top-row {
     display: flex;
     border-bottom: 1px solid #ddd;
+    padding-left: 20px;
 }
 
 .middle-row {
@@ -233,16 +235,14 @@ a {
     vertical-align: top;
 }
 
-.more {
+
+.tenants-container .more {
     font-size: 0.9em;
     background: #002e6f;
     width: 200px;
     padding: 5px;
     text-align: center;
     border-radius: 5px;
-}
-
-.tenants-container .more {
     float: left;
 }
 
